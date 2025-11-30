@@ -1,15 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   font-size: 14px;
   line-height: 1.42857143;
   font-family: "Montserrat", sans-serif;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* ...header... */
 header {
   width: 100%;
@@ -32,13 +36,14 @@ header {
   background-image: url(image/logopng.png);
   background-size: cover;
 }
-#menubox  {
-  color:#39b54a;
+#menubox {
+  color: #39b54a;
   position: fixed;
   right: 40px;
   top: 35px;
   background-color: black;
   padding: 0px 8px;
+  cursor: pointer;
 }
 #menu {
   position: sticky;
@@ -47,12 +52,79 @@ header {
   letter-spacing: 2px;
   position: sticky;
 }
+#menu i {
+  cursor: pointer;
+}
+#menuboxcontent {
+  transform: translateX(100%);
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 280px;
+  background: #0C0C0C;
+  padding: 1rem;
+  height: 100vh;
+  transition: 0.5s ease;
+}
+#menuboxcontent.active {
+  transform: translateX(0);
+}
+#navtext {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10px;
+  color: #39b54a;
+  font-weight: 600;
+  margin-top: 1.7rem;
+}
+#navtext h3 {
+  color: #39b54a;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+  margin-bottom: 1.8rem;
+  margin-top: .9rem;
+}
+#navtext h4 {
+  color: white;
+  margin-right: 10px;
+  margin-top: .9rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#menuboxcontent ul li{
+  list-style: none;
+  margin: 2rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#menuboxcontent p {
+  color: white;
+  margin: 1rem 1.5rem;
+  max-width: 250px;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 1rem;
+  margin-top: 3rem;
+  line-height: 1.846;
+}
+#menuIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin: 2rem 1.5rem;
+}
 
 /* ...page1... */
-
 #page1 {
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6)), url(image/hero-bg.jpg.webp ) center center / cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.6)),
+    url(image/hero-bg.jpg.webp) center center / cover no-repeat fixed;
   color: white;
   display: flex;
   flex-direction: column;
@@ -64,7 +136,6 @@ header {
   padding-top: 17rem;
   padding-bottom: 15.6rem;
   animation: fadeInUp 1s;
-
 }
 @keyframes fadeInUp {
   from {
@@ -78,32 +149,34 @@ header {
 }
 #page1content h3 {
   font-size: 1.2rem;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   color: rgba(255, 255, 255, 0.5);
 }
 #page1content h1 {
   font-size: 4.5rem;
   font-weight: 550;
 }
-#page1 button {
+#page1button {
+  margin-top: 6rem;
+}
+#page1 a {
   border: 1px solid white;
   padding: 18px 25px;
   background: transparent;
   color: white;
   margin: 1.5rem 1.5rem 0 0;
-  letter-spacing: .25rem;
+  letter-spacing: 0.25rem;
   margin-top: 6rem;
   font-size: 0.85rem;
   font-weight: 600;
-  transition: all 0.5s ease ease-out;
+  /* transition: all 0.5s ease ease-out; */
 }
-#page1 button:hover {
+#page1 a:hover {
   background-color: white;
   color: black;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
-
 #Icons {
   position: absolute;
   right: 40px;
@@ -119,8 +192,8 @@ header {
   cursor: pointer;
 }
 
- /* ...page2... */
- #page2 {
+/* ...page2... */
+#page2 {
   background-color: #39b54a;
   padding: 120px 0px;
   width: 100%;
@@ -128,26 +201,27 @@ header {
   justify-content: center;
   text-align: center;
   flex-direction: column;
- }
- #page2Box {
+  position: relative;
+}
+#page2Box {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-direction: row;
   flex-wrap: wrap;
- }
- #page2 h4 {
+}
+#page2 h4 {
   font-size: 1.2rem;
   color: black;
   font-weight: 700;
   letter-spacing: 3px;
- }
- #page2 h1 {
+}
+#page2 h1 {
   font-size: 5.5rem;
   line-height: 1.25;
   color: #ffffff;
   margin-top: 0;
- }
+}
 #line {
   width: 550px;
   height: 0.5px;
@@ -160,7 +234,7 @@ header {
   font-size: 2rem;
   line-height: 1.4;
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   max-width: 1019px;
   margin-left: auto;
   margin-right: auto;
@@ -182,32 +256,49 @@ header {
   margin-top: 0rem;
   font-weight: 700;
 }
+#arrow {
+  position: fixed;
+  bottom: 30px;
+  left: 93%;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.611);
+  cursor: pointer;
+  background-color: black;
+  padding: 0.5rem 1.2rem;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  z-index: 999;
+}
+#arrow.hide {
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* ...page3... */
 #page3 {
-background-color: #ffffff;
-padding: 120px 0px;
-width: 100%;
-display: flex;
-justify-content: center;
-text-align: center;
-flex-direction: column;
+  background-color: #ffffff;
+  padding: 120px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
 }
 #page3 h4 {
-font-size: 1.2rem;
-color: #39b54a;
-font-weight: 700;
-letter-spacing: 3px;
-margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #39b54a;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
 }
 #page3 h1 {
-font-size: 3.8rem;
-font-weight: 600;
-line-height: 1.25;
-color: #000000;
-margin-top: 0;
-width: 1019px;
-margin: 0 auto;
+  font-size: 3.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000000;
+  margin-top: 0;
+  width: 1019px;
+  margin: 0 auto;
 }
 #p3line {
   width: 550px;
@@ -262,7 +353,7 @@ margin: 0 auto;
   letter-spacing: 3px;
   color: #39b54a;
   font-weight: 700;
-  text-align: center; 
+  text-align: center;
 }
 #page4 h1 {
   font-size: 4rem;
@@ -279,12 +370,12 @@ margin: 0 auto;
 #photos {
   max-width: 1090px;
   margin: 0 auto 120px auto;
-  background-color: chocolate;
   margin-top: -6rem;
   display: flex;
   flex-direction: row;
 }
-#leftphoto, #rightphoto {
+#leftphoto,
+#rightphoto {
   width: 50%;
 }
 #photos img {
@@ -292,7 +383,63 @@ margin: 0 auto;
   height: auto;
   display: block;
   border: none;
+  cursor: pointer;
 }
+.photobox {
+  position: relative;
+}
+.photobox .plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  color: #fff;
+  font-size: 40px;
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.photobox:hover .plus {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.photobox .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.62);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.photobox:hover .overlay {
+  opacity: 1;
+}
+.photobox .info {
+  position: absolute;
+  left: 30px;
+  bottom: -60px;
+  color: #fff;
+  opacity: 0;
+  transition: bottom 0.45s ease, opacity 0.45s ease;
+}
+
+.photobox .info h3 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.photobox .info p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.78);
+}
+.photobox:hover .info {
+  opacity: 1;
+  bottom: 30px;
+}
+
 
 /* ...page5... */
 #page5 {
@@ -320,7 +467,7 @@ margin: 0 auto;
   letter-spacing: 3px;
   color: #39b54a;
   font-weight: 700;
-  text-align: center; 
+  text-align: center;
   margin-bottom: 1rem;
 }
 #client {
@@ -372,7 +519,6 @@ margin: 0 auto;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  
 }
 #ceopic img {
   height: 75px;
@@ -394,15 +540,14 @@ margin: 0 auto;
   text-align: center;
 }
 
- /* ...page6... */
+/* ...page6... */
 #page6 {
- 
-   background-image: url(image/contact-bg.jpg.webp);
+  background-image: url(image/contact-bg.jpg.webp);
   background-size: cover;
 }
 #page6content {
   width: 100%;
-   background-color: #151515c0;
+  background-color: #151515c0;
   display: flex;
   flex-direction: column;
   padding: 120px 0px;
@@ -423,7 +568,7 @@ margin: 0 auto;
   letter-spacing: 3px;
   color: #39b54a;
   font-weight: 700;
-  text-align: center; 
+  text-align: center;
   margin-bottom: 1rem;
 }
 #contact {
@@ -459,16 +604,18 @@ form {
   flex-direction: column;
   gap: 1rem;
 }
-input, textarea {
+input,
+textarea {
   padding: 10px;
   border: none;
   font-size: 1rem;
   background: transparent;
   font-family: "Montserrat", sans-serif;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  margin-bottom: .9rem;
+  margin-bottom: 0.9rem;
 }
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: rgba(255, 255, 255, 0.46);
 }
 #contactbox button {
@@ -477,11 +624,22 @@ input::placeholder, textarea::placeholder {
   border: none;
   color: white;
   margin-top: 1rem;
-  letter-spacing: .15rem;
+  letter-spacing: 0.15rem;
   font-size: 0.9rem;
   font-weight: 550;
   transition: all 0.5s ease ease-out;
   background-color: #39b54a;
+  cursor: pointer;
+}
+#contactbox button:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+#contactbox button.active {
+  background-color: white;
+  color: black;
+  transition: all 0.5s ease-in-out;
 }
 #contactinfo {
   height: auto;
@@ -512,9 +670,13 @@ input::placeholder, textarea::placeholder {
 .p6icon {
   cursor: pointer;
 }
+.p6icon i {
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
 .p6icon i:hover {
   color: #39b54a;
-  transition: all 0.5s ease-in-out;
+  transform: scale(1.18);
 }
 
 /* ...footer... */
@@ -563,20 +725,29 @@ footer {
   width: 65%;
   height: 3.4rem;
   padding: 1.2rem 0px 1.2rem 60px;
-  background: url(image/email-icon.png.webp) 20px center no-repeat, rgba(0, 0, 0, 0.1);
+  background: url(image/email-icon.png.webp) 20px center no-repeat,
+    rgba(0, 0, 0, 0.1);
   background-size: 24px 16px, auto;
   border: none;
   margin-bottom: 1.8rem;
   color: rgba(255, 255, 255, 0.5);
 }
+input:focus , textarea:focus {
+  outline: none;
+  border: 2px solid #39b54a;
+  transition: all 0.4s ease-in-out;
+}
+input.active , textarea.active {
+  border: 2px solid  #39b54a;
+  transition: all 0.4s ease-in-out;
+}
 footer button {
-  font-family: "montserrat-medium", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   height: 3.4rem;
   padding: 0 1.5rem;
-  margin: 0 .3rem 1.2rem 0;
+  margin: 0 0.3rem 1.2rem 0;
   color: #ffffff;
   text-decoration: none;
   text-align: center;
@@ -584,6 +755,17 @@ footer button {
   transition: all 0.3s ease-in-out;
   background-color: #39b54a;
   border: none;
+  cursor: pointer;
+}
+footer button:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+footer button.active {
+  background-color: white;
+  color: black;
+  transition: all 0.5s ease-in-out;
 }
 footer h3 {
   font-size: 1.2rem;
@@ -611,80 +793,82 @@ span {
   color: #ffffff;
 }
 
+
 @media screen and (max-width: 1000px) {
   #page1content h1 {
     font-size: 3.5rem;
     font-weight: 550;
-}
-#page1content {
+  }
+  #page1content {
     max-width: 680px;
-}
-#page2para {
-  font-size: 1.7rem;
-  max-width: 829px;
-}
-#page3 h1 {
-  font-size: 3rem;
-  width: 808px;
-}
-#page4 h1 {
-  font-size: 3.5rem;
-  font-weight: 550;
-  color: white;
-  text-align: center;
-  margin-top: 1rem;
-  max-width: 780px;
-}
-#photos {
+  }
+  #page2para {
+    font-size: 1.7rem;
+    max-width: 829px;
+  }
+    #arrow {
+    padding: 0.2rem 1rem;
+    left: 90%;
+  }
+  #page3 h1 {
+    font-size: 3rem;
+    width: 808px;
+  }
+  #page4 h1 {
+    font-size: 3.5rem;
+    font-weight: 550;
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    max-width: 780px;
+  }
+  #photos {
     max-width: 900px;
-}
-#page5 h1 {
-  font-size: 3.5rem;
-  width: 860px;
-}
-.clientpng {
-  width: 148px;
-  height: auto;
-  padding: 1.5rem;
-}
-#page5 p {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  text-align: center;
-  max-width: 713px;
-}
+  }
+  #page5 h1 {
+    font-size: 3.5rem;
+    width: 860px;
+  }
+  .clientpng {
+    width: 148px;
+    height: auto;
+    padding: 1.5rem;
+  }
+  #page5 p {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    max-width: 713px;
+  }
 
-
-#page6 h1 {
-  font-size: 3.5rem;
-  font-weight: 550;
-  text-align: center;
-  margin-top: 0;
-  max-width: 770px;
-}
-#contact {
+  #page6 h1 {
+    font-size: 3.5rem;
+    font-weight: 550;
+    text-align: center;
+    margin-top: 0;
+    max-width: 770px;
+  }
+  #contact {
     display: flex;
     flex-direction: column;
-}
-#footercontainer {
+  }
+  #footercontainer {
     max-width: 902px;
-}
-#footercontainer {
+  }
+  #footercontainer {
     max-width: 500px;
     display: flex;
     flex-direction: column;
-}
-#footerleft {
+  }
+  #footerleft {
     width: 100%;
     padding-right: 0rem;
     margin-bottom: 3rem;
-}
-#footerright {
+  }
+  #footerright {
     width: 100%;
+  }
 }
-}
-
-
 @media screen and (max-width: 800px) {
   #page1content {
     max-width: 550px;
@@ -709,37 +893,41 @@ span {
   #page2para {
     font-size: 1.6rem;
     max-width: 600px;
-    }
-    #page2Box {
-    gap: 1rem
-    }
-    #page3 h1 {
+  }
+  #page2Box {
+    gap: 1rem;
+  }
+  #arrow {
+    padding: 0.2rem 1rem;
+    left: 90%;
+  }
+  #page3 h1 {
     font-size: 2.8rem;
     width: 600px;
-    }
-    .p3box {
+  }
+  .p3box {
     width: 45%;
     margin: 1.5rem 1.5%;
-}
-#page3Box{
+  }
+  #page3Box {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     text-align: start;
     width: 94%;
     max-width: 600px;
-}
-.p3box {
+  }
+  .p3box {
     width: 100%;
     margin: 1.5rem 1.5%;
-}
+  }
   #page4 h1 {
-  font-size: 2.8rem;
-  font-weight: 550;
-  color: white;
-  text-align: center;
-  margin-top: 1rem;
-  max-width: 624px;
+    font-size: 2.8rem;
+    font-weight: 550;
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    max-width: 624px;
   }
   #photos {
     max-width: 700px;
@@ -747,351 +935,352 @@ span {
   #page5 h1 {
     font-size: 2.8rem;
     width: 602px;
-}
-.clientpng {
+  }
+  .clientpng {
     width: 94px;
     height: auto;
     padding: 1.5rem;
-}
-#page5 p {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  text-align: center;
-  max-width: 514px;
-}
+  }
+  #page5 p {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    max-width: 514px;
+  }
   #page6 h1 {
-  font-size: 2.8rem;
-  font-weight: 550;
-  text-align: center;
-  margin-top: 0;
- max-width: 650px;
+    font-size: 2.8rem;
+    font-weight: 550;
+    text-align: center;
+    margin-top: 0;
+    max-width: 650px;
+  }
+  #menubox {
+    color: #39b54a;
+    position: fixed;
+    right: 50px;
+  }
+  #contact {
+    max-width: 622px;
+  }
 }
-#menubox {
-  color: #39b54a;
-  position: fixed;
-  right: 50px;
-}
-#contact {
-  max-width: 622px;
-}
-}
-
 @media screen and (max-width: 620px) {
-   #page1content{
+   #menubox {
+    color: #39b54a;
+    position: fixed;
+    right: 20px;
+  }
+  #page1content {
     padding-top: 14rem;
-   }
-       #page2para {
-        font-size: 1.5rem;
-        max-width: 450px;
-    }
-        #page2 h1 {
-        font-size: 4rem;
-    }
-    #page2Box h3 {
+  }
+  #page2para {
+    font-size: 1.5rem;
+    max-width: 450px;
+  }
+  #page2 h1 {
+    font-size: 4rem;
+  }
+  #page2Box h3 {
     font-size: 3.5rem;
     color: white;
-}
-#page2 {
+  }
+  #page2 {
     background-color: #39b54a;
     padding: 100px 0px;
-}
-    #page3 h1 {
-        font-size: 2.5rem;
-        width: 430px;
-    }
-    .p3box h5 {
+  }
+  #page3 h1 {
+    font-size: 2.5rem;
+    width: 430px;
+  }
+  .p3box h5 {
     font-size: 1.5rem;
-}
-.p3box p {
+  }
+  .p3box p {
     margin-left: 48px;
     color: #757575;
     font-family: "Lora", serif;
     letter-spacing: 1px;
     line-height: 1.5;
     font-size: 1rem;
-}
-    #page3Box {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        text-align: start;
-        width: 85%;
-        max-width: 500px;
-    }
-    #p3line {
+  }
+  #page3Box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: start;
+    width: 85%;
+    max-width: 500px;
+  }
+  #p3line {
     width: 460px;
-    }
-    #page4 h1 {
-        font-size: 2.5rem;
-        font-weight: 550;
-        color: white;
-        text-align: center;
-        margin-top: 1rem;
-        max-width: 430px;
-    }
-        #photos {
-        max-width: 500px;
-    }
-        #page5 h1 {
-        font-size: 2.5rem;
-        width: 422px;
-    }
-    .clientpng {
-        width: 81px;
-    }
-    #p5line {
+  }
+  #page4 h1 {
+    font-size: 2.5rem;
+    font-weight: 550;
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    max-width: 430px;
+  }
+  #photos {
+    max-width: 500px;
+  }
+  #page5 h1 {
+    font-size: 2.5rem;
+    width: 422px;
+  }
+  .clientpng {
+    width: 81px;
+  }
+  #p5line {
     width: 458px;
-        margin-bottom: 4rem;
-    }
-        #page5 p {
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-        text-align: center;
-        max-width: 420px;
-        }
-            #page6 h1 {
-        font-size: 2.5rem;
-        font-weight: 550;
-        text-align: center;
-        margin-top: 0;
-        max-width: 420px;
-    }
-        #contact {
-        max-width: 520px;
-    }
-#contactbox button {
+    margin-bottom: 4rem;
+  }
+  #page5 p {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    max-width: 420px;
+  }
+  #page6 h1 {
+    font-size: 2.5rem;
+    font-weight: 550;
+    text-align: center;
+    margin-top: 0;
+    max-width: 420px;
+  }
+  #contact {
+    max-width: 520px;
+  }
+  #contactbox button {
     width: 100%;
     padding: 1.2rem 12rem;
-}
-    #footercontainer {
-        max-width: 439px;
-    }
-    #footerright input[type="text"] {
+  }
+  #footercontainer {
+    max-width: 439px;
+  }
+  #footerright input[type="text"] {
     width: 60%;
-    }
-    footer button {
+  }
+  footer button {
     font-size: 0.8rem;
-    padding: 0 0.5rem
-    }
-
-
+    padding: 0 0.5rem;
+  }
 }
-@media screen and (max-width: 480px ){
-         #page1content h3 {
-        font-size: 1.2rem;
-        text-align: center;
-    }
-    #page1 h1 br {
-      display: none;
-    }
-        #page1content h1 {
-        font-size: 2.3rem;
-        font-weight: 550;
-        text-align: center;
-    }
-    #Icons {
-      display: none;
-    }
-        #menubox {
-        right: 35px;
-        }
-        #page1button {
-          display: flex;
-          flex-direction: column;
-          width: 90%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        #page1 button {
-        margin: 0rem;
-        letter-spacing: .25rem;
-        margin-top: 1.5rem;
-        font-size: 1rem;
-        font-weight: 600;
-        transition: all 0.5s ease ease-out;
-}
-    #page1 button {
-        border: 1.8px solid white;
-    }
-    #page1content {
-        max-width: 344px;
-    }
-        #page2para {
-        font-size: 1.5rem;
-        max-width: 380px;
-    }
-    #page2Box {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-        #line {
-        width: 245px;
-    }
-        #page2Box h3 {
-        font-size: 5.5rem;
-        color: white;
-    }
-    #page2Box p {
+@media screen and (max-width: 480px) {
+ 
+  #page1content h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  #page1 h1 br {
+    display: none;
+  }
+  #page1content h1 {
+    font-size: 2.3rem;
+    font-weight: 550;
+    text-align: center;
+  }
+  #Icons {
+    display: none;
+  }
+  #menubox {
+    right: 35px;
+  }
+  #page1button {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #page1 button {
+    margin: 0rem;
+    letter-spacing: 0.25rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.5s ease ease-out;
+  }
+  #page1 button {
+    border: 1.8px solid white;
+  }
+  #page1content {
+    max-width: 344px;
+  }
+  #page2para {
     font-size: 1.5rem;
-    }
-    .p2box {
-      border: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      padding-bottom: 1.5rem;
-      padding-right: 0px;
-    }
-        #page3 h1 {
-        font-size: 2.5rem;
-        width: 386px;
-    }
-        #p3line {
-        width: 200px;
-    }
-    
-    #photos {
-      display: flex;
-      flex-direction: column;
-      max-width: 380px;
-    }
-    #leftphoto, #rightphoto {
+    max-width: 380px;
+  }
+  #page2Box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #line {
+    width: 245px;
+  }
+  #page2Box h3 {
+    font-size: 5.5rem;
+    color: white;
+  }
+  #page2Box p {
+    font-size: 1.5rem;
+  }
+  #arrow {
+  padding: 0.2rem 1rem;
+  left: 85%;
+  }
+  .p2box {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 1.5rem;
+    padding-right: 0px;
+  }
+  #page3 h1 {
+    font-size: 2.5rem;
+    width: 386px;
+  }
+  #p3line {
+    width: 200px;
+  }
+
+  #photos {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+  }
+  #leftphoto,
+  #rightphoto {
     width: 100%;
-}
-    #page5 h1 {
-        font-size: 2.6rem;
-        width: 362px;
-    }
-    .clientpng {
-        width: 76px;
-    }
-        #p5line {
-        width: 300px;
-        margin-bottom: 3rem;
-    }
-        #page5 p {
-        font-size: 1.4rem;
-        max-width: 370px;
-    }
-    #ceopic {
-    width: 25%;
-    }
-        #page6 h1 {
-        max-width: 390px;
-    }
-    #contact p {
-      text-align: center;
-          font-size: 1.3rem;
-
-    }
-    #page6Icons {
-      justify-content: center;
-    }
-    #contactinfo {
-      background-color: rgba(0, 0, 0, 0.093);
-    }
-    #page6content  {
-      padding: 0px;
-    }
-        #footercontainer {
-        max-width: 390px;
-    }
-    footer h3 {
-      text-align: center;
-      font-size: 1.5rem;
-    }
-    #footerright input[type="text"] {
-        width: 100%;
-    }
-        footer button {
-        font-size: 0.8rem;
-        padding: 0px;
-        width: 100%;
-    }
-        #contact {
-        max-width: 370px;
-    }
-        #contactbox button {
-        width: 100%;
-        padding: 1.2rem 8rem;
-    }
-    #contactinfo h5 {
-    font-size: 1.8rem;
-    }
-    #contactinfo h6 {
+  }
+  #page5 h1 {
+    font-size: 2.6rem;
+    width: 362px;
+  }
+  .clientpng {
+    width: 76px;
+  }
+  #p5line {
+    width: 300px;
+    margin-bottom: 3rem;
+  }
+  #page5 p {
     font-size: 1.4rem;
-    }
-    input, textarea {
+    max-width: 370px;
+  }
+  #ceopic {
+    width: 25%;
+  }
+  #page6 h1 {
+    max-width: 390px;
+  }
+  #contact p {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  #page6Icons {
+    justify-content: center;
+  }
+  #contactinfo {
+    background-color: rgba(0, 0, 0, 0.093);
+  }
+  #page6content {
+    padding: 0px;
+  }
+  #footercontainer {
+    max-width: 390px;
+  }
+  footer h3 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  #footerright input[type="text"] {
+    width: 100%;
+  }
+  footer button {
+    font-size: 0.8rem;
+    padding: 0px;
+    width: 100%;
+  }
+  #contact {
+    max-width: 370px;
+  }
+  #contactbox button {
+    width: 100%;
+    padding: 1.2rem 8rem;
+  }
+  #contactinfo h5 {
+    font-size: 1.8rem;
+  }
+  #contactinfo h6 {
+    font-size: 1.4rem;
+  }
+  input,
+  textarea {
     font-size: 1.1rem;
-    }
-
-
+  }
 }
-
-@media screen and (max-width: 400px ){
-      #page4 h1 {
-        font-size: 2.3rem;
-        font-weight: 550;
-        color: white;
-        text-align: center;
-        margin-top: 1rem;
-        width: 360px;
-      }
-      #ceopic {
-        width: 40%;
-    }
-    #page6 h4 {
-      margin-top: 7rem;
-    }
-        #footercontainer {
-        max-width: 309px;
-    }
-        footer button {
-        font-size: 0.8rem;
-        padding: 0px;
-        width: 100%;
-    }
-    #footerend {
-      flex-direction: column;
-       font-size: 1.2rem;
-    }
-        #page2 h1 {
-        font-size: 3rem;
-    }
-        #line {
-        width: 145px;
-    }
-        #page2para {
-        font-size: 1.5rem;
-        max-width: 300px;
-    }
-    #page3 h1 {
-        font-size: 2.2rem;
-        width: 313px;
-    }
-        #photos {
-        display: flex;
-        flex-direction: column;
-        max-width: 330px;
-    }
-        #page5 h1 {
-        font-size: 2.3rem;
-        width: 346px;
-    }
-        #page5 p {
-        font-size: 1.3rem;
-        max-width: 330px;
-    }
-        #menubox {
-        right: 20px;
-    }
-    footer button {
-        font-size: 1rem;
-
-    }
-
+@media screen and (max-width: 400px) {
+  #page4 h1 {
+    font-size: 2.3rem;
+    font-weight: 550;
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    width: 360px;
+  }
+  #ceopic {
+    width: 40%;
+  }
+  #page6 h4 {
+    margin-top: 7rem;
+  }
+  #footercontainer {
+    max-width: 309px;
+  }
+  footer button {
+    font-size: 0.8rem;
+    padding: 0px;
+    width: 100%;
+  }
+  #footerend {
+    flex-direction: column;
+    font-size: 1.2rem;
+  }
+  #page2 h1 {
+    font-size: 3rem;
+  }
+  #line {
+    width: 145px;
+  }
+  #page2para {
+    font-size: 1.5rem;
+    max-width: 300px;
+  }
+  #page3 h1 {
+    font-size: 2.2rem;
+    width: 313px;
+  }
+  #photos {
+    display: flex;
+    flex-direction: column;
+    max-width: 330px;
+  }
+  #page5 h1 {
+    font-size: 2.3rem;
+    width: 346px;
+  }
+  #page5 p {
+    font-size: 1.3rem;
+    max-width: 330px;
+  }
+  #menubox {
+    right: 20px;
+  }
+  footer button {
+    font-size: 1rem;
+  }
 }
-
-  
