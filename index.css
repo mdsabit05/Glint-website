@@ -166,10 +166,8 @@ header {
   color: white;
   margin: 1.5rem 1.5rem 0 0;
   letter-spacing: 0.25rem;
-  margin-top: 6rem;
   font-size: 0.85rem;
   font-weight: 600;
-  /* transition: all 0.5s ease ease-out; */
 }
 #page1 a:hover {
   background-color: white;
